@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css" >
+
+    <title>Chrono</title>
+</head>
+<body>
+    <div id="numeros">
+        <label for="numSuivant1">Numéro: </label> </td><td class="col"><input type="text" id="numSuivant1">
+        <label for="numSuivant2">Numéro: </label> </td><td class="col"><input type="text" id="numSuivant2">
+        <label for="numSuivant3">Numéro: </label> </td><td class="col"><input type="text" id="numSuivant3">
+        <button id="Ajouter" class="btn btn-primary">Départ</button>
+    </div>
+    <div id="boutons">
+        <button id="PDF" class="btn btn-danger" onclick='createPDF()'>PDF</button>
+        <button id="triChrono" class="btn btn-primary" onclick="triChrono()">Classement</button>
+    </div>
+    
+    <br><br>
+    <table class="table table-striped container" id="tableau" type="application/pdf">
+        <thead>
+            <tr class="row">
+                <th class="col" data-sortable="true">Numéro</th>
+                <th class="col" data-sortable="true">Temps </th>
+                <th class="col">Etat</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fonction.js"></script>
+</body>
+</html>
