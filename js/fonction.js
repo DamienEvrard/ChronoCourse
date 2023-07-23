@@ -74,13 +74,32 @@ function formatTime(ms) {
     let seconds = Math.floor((ms % 60000) / 1000);
     let milliseconds = Math.floor((ms % 1000) / 10);
 
-    return `${pad(minutes)}:${pad(seconds)}:${pad(milliseconds)}`;
+    return `${pad(minutes)}:${pad(seconds)},${pad(milliseconds)}`;
 }
 
 function pad(num) {
     return num.toString().padStart(2, "0");
 }
 
+
+/*_________________________________________________________creer csv*/ //probleme de traitement des valeurs par excel car format mm:ss:ccc et non hh:mm:ss
+function createExcel(){
+    let valeurs="";
+
+
+    var table = document.getElementById("tableau");
+    for (var i = 1, row; row = table.rows[i]; i++) {
+        valeurs+=(row.cells[0].innerHTML+";"+row.cells[1].innerHTML+"\n");
+    }
+
+    //document.write(valeurs);
+    
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:date/csv;charset=utf-8,' + encodeURI(valeurs);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'Temps.csv';
+    hiddenElement.click();
+}
     
 
 /*_________________________________________________________convetion pdf*/
