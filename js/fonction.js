@@ -72,9 +72,9 @@ document.getElementById("Ajouter").addEventListener("click", () => {
 function formatTime(ms) {
     let minutes = Math.floor(ms / 60000);
     let seconds = Math.floor((ms % 60000) / 1000);
-    let milliseconds = Math.floor((ms % 1000) / 10);
+    let milliseconds = Math.floor((ms % 1000) / 100);
 
-    return `${pad(minutes)}:${pad(seconds)},${pad(milliseconds)}`;
+    return `${pad(minutes)}:${pad(seconds)},${milliseconds}`;
 }
 
 function pad(num) {
